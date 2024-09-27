@@ -1,24 +1,113 @@
+:root {
+  --Ac-1: rgba(255, 245, 240, 1);
+  --Ac-2: rgba(255, 245, 240, 0.6);
+  --Ac-3: rgba(255, 245, 240, 0.35);
+  --Ac-4: rgba(255, 245, 240, 0.05);
+  --Ac-5: rgba(255, 245, 240, 0.02);
+
+  --Bc-1: rgba(212, 157, 129, 1);
+  --Bc-2: rgba(212, 157, 129, 0.6);
+  --Bc-3: rgba(212, 157, 129, 0.3);
+  --Bc-4: rgba(212, 157, 129, 0.1);
+
+  --Cc-1: rgba(160, 143, 255, 1);
+  --Cc-2: rgba(160, 143, 255, 0.6);
+  --Cc-3: rgba(160, 143, 255, 0.3);
+  --Cc-4: rgba(160, 143, 255, 0.1);
+
+  --Dc-1: rgba(168, 229, 255, 1);
+  --Dc-2: rgba(168, 229, 255, 0.6);
+  --Dc-3: rgba(168, 229, 255, 0.3);
+  --Dc-4: rgba(168, 229, 255, 0.1);
+
+  --Ec-1: rgb(24, 25, 30);
+  --Ec-2: rgba(24, 25, 30, 0.6);
+  --Ec-3: rgba(24, 25, 30, 0.3);
+  --Ec-4: rgba(24, 25, 30, 0);
+
+  --Fc-1: rgba(131, 255, 201, 1);
+  --Fc-2: rgba(131, 255, 201, 0.7);
+  --Fc-3: rgba(131, 255, 201, 0.3);
+  --Fc-4: rgba(131, 255, 201, 0.02);
+
+  --Gc-1: rgba(255, 102, 102, 1);
+  --Gc-2: rgba(255, 102, 102, 0.7);
+  --Gc-3: rgba(255, 102, 102, 0.3);
+  --Gc-4: rgba(255, 102, 102, 0.02);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  overflow: hidden;
+  color: #011436;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  margin: 0;
+  background-color: var(--Ec-1);
+  font-family: "Noto Sans", sans-serif;
+}
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  --safe-area-inset-bottom: env(safe-area-inset-bottom);
+}
+#root {
+  overflow: hidden;
+}
+.App {
   text-align: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.MainBackground {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -100;
 }
 
-@keyframes logo-spin {
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    -webkit-animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@-webkit-keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
@@ -27,16 +116,191 @@
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
-
-.card {
-  padding: 2em;
+.App {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-.read-the-docs {
-  color: #888;
+[data-amplify-authenticator] {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+[data-amplify-container] {
+  margin: auto;
+  align-self: center;
+  justify-self: center;
+  height: 500px;
+  display: flex;
+  background-color: var(--Ec-4);
+  border-radius: 35px;
+  color: var(--Ac-1);
+  width: 350px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  outline: 1px solid var(--Ec-2);
+}
+[data-amplify-router] {
+  width: 100%;
+  height: 100%;
+}
+.amplify-tabs {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.amplify-tabs__list {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+[data-amplify-router-content] {
+  position: relative;
+  font-family: "Noto Sans", sans-serif;
+}
+[data-amplify-router-content] fieldset {
+  border: none;
+  outline: 1px solid var(--Ac-2);
+  border-radius: 25px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.amplify-visually-hidden {
+  display: none;
+}
+.amplify-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 0.75rem;
+  font-family: "Noto Sans", sans-serif;
+}
+.amplify-label {
+  margin-left: 5px;
+  margin-bottom: 2px;
+}
+.amplify-field-group__field-wrapper {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.amplify-field-group__field-wrapper input {
+  width: 100%;
+  padding: 15px 15px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-color: var(--Ac-4) !important;
+  color: var(--Ac-1);
+  box-sizing: border-box;
+}
+[data-amplify-router-content] ::placeholder {
+  color: var(--Ac-3);
+  font-size: 0.7rem;
+  font-family: "Noto Sans", sans-serif;
+}
+[data-amplify-router-content] input:-internal-autofill-selected {
+  background-color: var(--Ec-4) !important;
+  color: var(--Ac-1) !important;
+  background: var(--Ec-4) !important;
+  appearance: none;
+}
+.amplify-field__show-password {
+  display: none;
+  position: absolute;
+  right: 55px;
+  top: 120px;
+  cursor: pointer;
+  background-color: var(--Ec-4);
+  color: var(--Bc-2);
+  border: none;
+  outline: none;
+  width: 10px;
+}
+.amplify-field__show-password svg {
+  width: 15px;
+  height: 15px;
+}
+[data-amplify-footer] {
+  position: absolute;
+  top: 180px;
+  right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 10px; */
+  box-sizing: border-box;
+  /* background-color: var(--Bc-4); */
+}
+[data-amplify-footer] button {
+  background-color: var(--Ec-4);
+  color: var(--Bc-1);
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.7rem;
+}
+.amplify-button--primary:last-of-type {
+  background-color: var(--Bc-2);
+  color: var(--Ec-1);
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: "Noto Sans", sans-serif;
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+}
+
+.amplify-select__wrapper select {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--Ec-4);
+  color: var(--Ac-1);
+  padding: 10px;
+  border: 1px solid var(--Bc-2);
+  border-radius: 12px;
+  position: absolute;
+  backdrop-filter: blur(10px);
+}
+.amplify-select__wrapper select option {
+  background-color: var(--Ec-1);
+  color: var(--Ac-1);
+  background: var(--Ec-1);
+  outline: 1px solid var(--Bc-2);
+}
+.amplify-select__wrapper select::-webkit-scrollbar {
+  display: none;
+}
+.amplify-select__icon {
+  display: none;
 }
